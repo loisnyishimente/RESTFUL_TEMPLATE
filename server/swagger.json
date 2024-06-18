@@ -5,8 +5,8 @@
         "title": "Equipment Distribution System",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "Nkubito Pacis",
-            "email": "pacisnkubito@gmail.com"
+            "name": "lois",
+            "email": "musimentalois@gmail.com"
         },
         "version": "1.0.0"
     },
@@ -15,8 +15,8 @@
             "description": "Operations on users"
         },
         {
-            "name": "EMPLOYEE-LAPTOP OPERATIONS",
-            "description": "Operations on employees laptops"
+            "name": "books OPERATIONS",
+            "description": "Operations on books"
         }
     ],
     "security": [{
@@ -94,6 +94,20 @@
                     "type": "object",
                     "consumes": "application/json",
                     "properties": {
+                        
+                        "id":{
+                            "type": "string",
+                            "required": "true"
+                        },
+                    
+                        "firstname": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "lastname":{
+                            "type": "string",
+                            "required": "true"
+                        },
                         "email": {
                             "type": "string",
                             "required": "true"
@@ -101,11 +115,8 @@
                         "password": {
                             "type": "string",
                             "required": "true"
-                        },
-                        "names": {
-                            "type": "string",
-                            "required": "true"
                         }
+                
                     }
                 }],
                 "responses": {
@@ -152,12 +163,12 @@
                 }
             }
         },
-        "/employee-laptops": {
+        "/books/search":{
             "get": {
                 "tags": [
-                    "EMPLOYEE-LAPTOP OPERATIONS"
+                    "books OPERATIONS"
                 ],
-                "summary": "Get Employees Laptops",
+                "summary": "Get book",
                 "consumes": [
                     "application/json"
                 ],
@@ -191,12 +202,51 @@
                 }
             }
         },
-        "/employee-laptops/register": {
+        "/books": {
+            "get": {
+                "tags": [
+                    "books OPERATIONS"
+                ],
+                "summary": "Get bookd",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "query",
+                        "name": "page",
+                        "type": "number"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/books/register": {
             "post": {
                 "tags": [
-                    "EMPLOYEE-LAPTOP OPERATIONS"
+                    "books OPERATIONS"
                 ],
-                "summary": "Register employee laptop",
+                "summary": "Register books",
                 "consumes": [
                     "application/json"
                 ],

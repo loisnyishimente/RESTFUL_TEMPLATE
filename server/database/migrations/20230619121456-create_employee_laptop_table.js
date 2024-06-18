@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('employees', {
+    await queryInterface.createTable('books', {
       id: {
         allowNull: false,
         primaryKey: true,
@@ -49,28 +49,10 @@ module.exports = {
         type: Sequelize.STRING(255),
         allowNull: false,
       },
-      added_by: {
-        type: Sequelize.UUID,
-        references: {
-          model: "users",
-          key: 'id',
-        },
-        onUpdate: 'cascade',
-        onDelete: 'cascade',
-        allowNull: true,
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
     });
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('employees');
+    await queryInterface.dropTable('books');
   },
 };

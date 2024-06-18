@@ -7,7 +7,6 @@ export const Input = ({
   value,
   defaultInputValue,
   onChange,
-  onBlur,
   labelName,
 }) => {
   return (
@@ -24,7 +23,6 @@ export const Input = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        onBlur={onBlur}
         defaultValue={defaultInputValue}
       />
     </>
@@ -38,6 +36,5 @@ Input.propTypes = {
   value: PropTypes.string,
   defaultInputValue: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  onBlur: PropTypes.func.isRequired,
   labelName: PropTypes.string,
 };

@@ -67,7 +67,7 @@ const Sidebar = () => {
         <AiOutlineMenu />
       </div>
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
-        <div className="sidebar__logo">Equipment Distribution System</div>
+        <div className="sidebar__logo">lIBRARY MANAGMENT SYSTEM</div>
         <div className="sidebar__sublogo">{`Welcome ${
           profile?.names ? profile?.names : profile?.email
         }`}</div>

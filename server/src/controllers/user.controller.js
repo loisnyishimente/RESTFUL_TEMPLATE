@@ -37,9 +37,12 @@ export const login = async (req, res) => {
 export const register = async(req,res)=>{
   try{
     let {
+      id,
+      firstname,
+      lastname,
       email,
       password,
-      names
+    
     } = req.body;
 
     let findUserByEmail = await UserModel.findOne({
@@ -53,9 +56,12 @@ export const register = async(req,res)=>{
     password = await hash(password, salt);
 
     const user = await UserModel.create({
+      ID,
+      firstname,
+      lastname,  
       email,
       password,
-      names
+    
     })
 
     return createSuccessResponse("User registered successfully. You can now login", {}, res);
@@ -68,7 +74,7 @@ export const register = async(req,res)=>{
 
 export const getProfile = async(req,res)=>{
   try{
-      let user = await UserModel.findByPk(req.user.id,{attributes: ['email','id','names']});
+      let user = await UserModel.findByPk(req.user.id,{attributes: ['email','id','firstname','lastname']});
       if (!user) return errorResponse("User not found!",res);
 
       return successResponse("Profile",user,res)

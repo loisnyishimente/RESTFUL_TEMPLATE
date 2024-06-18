@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import { API_DATA_LIMIT, API_URL, sendRequest } from "../utils/Api";
 import { formatDate, formatTime } from "../utils/Utilities";
-import TableComponent from "../components/table/TableComponent";
-import TablePagination from "../components/table/TablePagination";
-import ModalContainer from "../components/forms/ModalContainer";
-import NewEmployeeLaptop from "../components/forms/NewEmployeeLaptop";
 
 export const Dashboard = () => {
   const [loading, setLoading] = useState(false);

@@ -4,14 +4,21 @@ import { PrivateRoute, PublicRoute } from "./utils/Route";
 import { Logout } from "./pages/Logout";
 import { ToastContainer } from "react-toastify";
 import { Dashboard } from "./pages/Dashboard";
+import { Signup } from "./pages/signup";
 
 function App() {
   return (
     <>
       <ToastContainer />
       <Router>
+        
         <Routes>
-          <Route path="/" exact element={<PublicRoute element={Login} />} />
+          <Route path="/" exact element={<PublicRoute element={Signup} />} />
+          <Route
+            path="/register"
+            exact
+            element={<PublicRoute element={Signup} />}
+          />
           <Route
             path="/login"
             exact

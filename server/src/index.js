@@ -9,7 +9,7 @@ import {createRequire} from "module";
 import swaggerUi from 'swagger-ui-express';
 import sequelize, { connectDB} from './utils/database.js';
 import userRoutes from "./routes/user.routes.js"
-import employeeLaptopRoutes from "./routes/employeeLaptop.routes.js"
+import booksRoutes from "./routes/books.route.js"
 import bodyParser from 'body-parser';
 // import swaggerJson from "./swagger.json";
 const app = express();
@@ -24,7 +24,7 @@ app.use(json())
 
 // app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJson));
 app.use("/users",userRoutes)
-app.use("/employee-laptops",employeeLaptopRoutes)
+app.use("/books",booksRoutes)
 
 
   
